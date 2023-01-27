@@ -38,8 +38,8 @@ const createPass = async () => {
   ];
 
   const buf = await pass.asBuffer();
-  await fs.writeFile("./example.pkpass", buf, () => {});
-  console.log(buf);
+  return buf;
 };
 
-createPass();
+
+module.exports = { createPass };
