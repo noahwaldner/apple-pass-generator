@@ -1,8 +1,8 @@
 {
-  "name": "passkit",
+  "name": "pass-generator",
   "version": "1.0.0",
   "description": "",
-  "main": "tets.js",
+  "main": "index.js",
   "scripts": {
     "build": "babel index.js -d dist",
     "start": "npm run build && node dist/index.js"
