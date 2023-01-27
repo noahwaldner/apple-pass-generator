@@ -1,0 +1,19 @@
+{
+  "name": "passkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tets.js",
+  "scripts": {
+    "build": "babel index.js -d dist",
+    "start": "npm run build && node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@walletpass/pass-js": "^6.9.1",
+    "dotenv": "^16.0.3"
+  }
+}

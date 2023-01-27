@@ -1,0 +1,14 @@
+{
+  "formatVersion" : 1,
+  "passTypeIdentifier" : "pass.example-pass",
+  "teamIdentifier" : "LLC944LRR5",
+  "webServiceURL" : "https://webhook.site/52985854-cfcd-498e-bd61-e5d9e754a44d",
+  "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+  "maxDistance" : 200,
+  "organizationName" : "TBS Avionics Co Limited",
+  "logoText" : "Viertel Klub",
+  "labelColor" : "rgb(255, 255, 255)",
+  "foregroundColor" : "rgb(255, 255, 255)",
+  "backgroundColor" : "rgb(0, 0, 0)",
+  "eventTicket" : {}
+}
