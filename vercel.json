@@ -1,10 +1,7 @@
 {
   "version": 2,
+  "buildCommand": "npm run build",
   "builds": [
-    {
-      "src": "package.json",
-      "use": "npm run build"
-    },
     {
       "src": "dist/index.js",
       "use": "@now/node"
