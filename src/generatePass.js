@@ -3,8 +3,16 @@ import fs from "fs";
 import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config();
 
-const createPass = async () => {
-  const template = await Template.load("./Familienkarte.pass", undefined, {
+const createPass = async ({type}) => {
+  const typeMap = {
+    black: "Familienkarte.pass",
+    wood: "Holzkarte.pass",
+    guest: "Familienkarte.pass",
+    friends: "Familienkarte.pass",
+  };
+
+
+  const template = await Template.load(typeMap[type], undefined, {
     allowHttp: true,
   });
   template.setCertificate(process.env.APPLE_CERT, "examplepass");

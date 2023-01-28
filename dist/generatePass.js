@@ -8,8 +8,16 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config();
-const createPass = async () => {
-  const template = await _passJs.Template.load("./Familienkarte.pass", undefined, {
+const createPass = async ({
+  type
+}) => {
+  const typeMap = {
+    black: "Familienkarte.pass",
+    wood: "Holzkarte.pass",
+    guest: "Familienkarte.pass",
+    friends: "Familienkarte.pass"
+  };
+  const template = await _passJs.Template.load(typeMap[type], undefined, {
     allowHttp: true
   });
   template.setCertificate(process.env.APPLE_CERT, "examplepass");
