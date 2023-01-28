@@ -17,7 +17,7 @@ const createPass = async ({
     guest: "Familienkarte.pass",
     friends: "Familienkarte.pass"
   };
-  const template = await _passJs.Template.load(typeMap[type.value], undefined, {
+  const template = await _passJs.Template.load(typeMap[type.value] || Familienkarte.pass, undefined, {
     allowHttp: true
   });
   template.setCertificate(process.env.APPLE_CERT, "examplepass");

@@ -12,9 +12,13 @@ const createPass = async ({type}) => {
   };
 
 
-  const template = await Template.load(typeMap[type.value], undefined, {
-    allowHttp: true,
-  });
+  const template = await Template.load(
+    typeMap[type.value] || Familienkarte.pass,
+    undefined,
+    {
+      allowHttp: true,
+    }
+  );
   template.setCertificate(process.env.APPLE_CERT, "examplepass");
   template.setPrivateKey(process.env.APPLE_PK, "examplepass");
   const pass = template.createPass();
