@@ -12,7 +12,7 @@ const createPass = async ({type}) => {
   };
 
 
-  const template = await Template.load(typeMap[type], undefined, {
+  const template = await Template.load(typeMap[type.value], undefined, {
     allowHttp: true,
   });
   template.setCertificate(process.env.APPLE_CERT, "examplepass");

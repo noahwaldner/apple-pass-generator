@@ -2,14 +2,12 @@ import express from "express";
 import {constants} from "@walletpass/pass-js"
 import { createPass } from "./generatePass.js";
 import path from "path";
-import html from "./passes.html"
+
 
 const app = express();
 const port = 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+
 
 app.get("/pass/family", (req, res) => {
   createPass({ type: { value: "black", friendlyName: "Schwarz" } }).then((pass) => {
@@ -34,7 +32,7 @@ app.get("/pass/wood", (req, res) => {
 });
 
 app.get("/pass/guestlist", (req, res) => {
-  createPass({ type: { value: "guets", friendlyName: "Guestlist" } }).then(
+  createPass({ type: { value: "guest", friendlyName: "Guestlist" } }).then(
     (pass) => {
       res.set(
         "Content-disposition",
@@ -52,9 +50,9 @@ app.get("/pass/friendslist", (req, res) => {
   });
 });
 
-app.get("/pass", (req, res) => {
+app.get("/", (req, res) => {
 
-    res.sendFile(path.join(__dirname, "./passes.html"));
+    res.sendFile(path.join(__dirname, "./static/passes.html"));
 
 });
 
